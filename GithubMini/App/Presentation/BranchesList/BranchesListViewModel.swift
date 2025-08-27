@@ -17,17 +17,14 @@ final class BranchesListViewModel: ObservableObject {
     }
 
     private let fetchBranches: FetchBranchesUseCaseProtocol
-//    private let owner: String
     private let repo: GitRepoEntity
     private var page = 1
     private let perPage = 10
 
     init(
-//        owner: String,
         repo: GitRepoEntity,
         fetchBranches: FetchBranchesUseCaseProtocol
     ) {
-//        self.owner = owner
         self.repo = repo
         self.fetchBranches = fetchBranches
     }
@@ -45,7 +42,7 @@ final class BranchesListViewModel: ObservableObject {
             let new = try await fetchBranches.execute(repoId: "\(repo.id)", page: page)
             if force || !new.isEmpty { branches.append(contentsOf: new); page += 1 }
         } catch {
-            
+            // Show error message here
         }
     }
 }

@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct BranchesListView: View {
-//    let owner: String
-//    let repo: String
     @StateObject var viewModel: BranchesListViewModel
-    
+
     var body: some View {
         List {
             ForEach(viewModel.branches) { branch in

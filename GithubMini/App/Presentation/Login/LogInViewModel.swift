@@ -6,14 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 @MainActor
 final class LogInViewModel: ObservableObject {
-    enum State {
-        case idle, loading, waitingForUser(code: String, url: String), loggedIn, error(String)
-    }
-
-    @Published private(set) var state: State = .idle
+    @Published private(set) var state: UserState = .idle
 
     private let loginUseCase: LogInUseCaseProtocol
     private let logoutUseCase: LogoutUseCaseProtocol
@@ -37,13 +34,23 @@ final class LogInViewModel: ObservableObject {
                 state = .loading
                 let flow = try await loginUseCase.startDeviceLogin()
                 state = .waitingForUser(code: flow.userCode, url: flow.verificationURI)
+                if let url = URL(string: flow.verificationURI) {
+                    await MainActor.run {
+                        UIApplication.shared.open(url)
+                    }
+                }
+
                 // Start polling but keep UI responsive
                 Task.detached(priority: .userInitiated) {
                     do {
                         try await self.loginUseCase.pollForDeviceToken(flow: flow)
-                        await MainActor.run { self.state = .loggedIn }
+                        await MainActor.run {
+                            self.state = .loggedIn
+                        }
                     } catch {
-                        await MainActor.run { self.state = .error("Failed to obtain token: \(error.localizedDescription)") }
+                        await MainActor.run {
+                            self.state = .error("Failed to obtain token: \(error.localizedDescription)")
+                        }
                     }
                 }
             } catch {

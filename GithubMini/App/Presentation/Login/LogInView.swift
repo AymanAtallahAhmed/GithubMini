@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LogInView: View {
+    @EnvironmentObject var container: AppContainer
     @ObservedObject var viewModel: LogInViewModel
-    
+    @State private var navigateToRepos = false
+
     var body: some View {
         VStack(spacing: 20) {
             Image(systemName: "octagon")
@@ -27,15 +29,24 @@ struct LogInView: View {
             
             switch viewModel.state {
             case .idle, .loading, .error:
-                EmptyView()
-            case .waitingForUser(let code, let url):
-                Text("case .waitingForUser(let code, let url):")
-//                DeviceFlowView(code: code, url: url)
+                Text("\(viewModel.state)")
+                    .font(.title)
+                //Show alert here with given state
+            case .waitingForUser:
+                //Show alert here with given state
+                Text("\(viewModel.state)")
+                    .font(.title)
             case .loggedIn:
-                EmptyView()
+                Text("Navigating to repositories...")
+                    .task {
+                        navigateToRepos = true
+                    }
             }
         }
         .padding()
+        .navigationDestination(isPresented: $navigateToRepos) {
+            ReposListView(viewModel: .init(fetchRepos: container.fetchReposUseCase)) // your repo list screen
+        }
     }
 }
 

@@ -13,7 +13,7 @@ struct ReposListView: View {
     @StateObject var viewModel: ReposListViewModel
 
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             List(viewModel.repos) { repo in
                 NavigationLink(repo.name, destination: BranchesListView(
                     viewModel: .init(
@@ -28,7 +28,7 @@ struct ReposListView: View {
                 )
             }
             .task { await viewModel.loadMore() }
-        }
+//        }
     }
 }
 

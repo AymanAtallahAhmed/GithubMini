@@ -10,13 +10,16 @@ import SecureStorage
 
 @main
 struct GithubMiniApp: App {
-    let appContainer = AppContainer()
+    @StateObject private var appContainer = AppContainer()
 
     var body: some Scene {
         WindowGroup {
-            LogInView(viewModel: .init(
-                loginUseCase: appContainer.loginUseCase,
-                logoutUseCase: appContainer.logoutUseCase))
+            NavigationStack {
+                LogInView(viewModel: .init(
+                    loginUseCase: appContainer.loginUseCase,
+                    logoutUseCase: appContainer.logoutUseCase))
+            }
+            .environmentObject(appContainer)
         }
     }
 }
