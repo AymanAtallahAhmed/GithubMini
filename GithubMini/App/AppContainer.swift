@@ -21,24 +21,29 @@ final class AppContainer: ObservableObject {
     let logoutUseCase: LogoutUseCaseProtocol
     let fetchReposUseCase: FetchReposUseCaseProtocol
     let fetchBranchesUseCase: FetchBranchesUseCaseProtocol
-    
+
+    let appConfig: AppConfig
+
     init() {
+        self.appConfig = .init()
         self.networkingManager = NetworkingManager()
         self.secureDataManger = SecureDataManager()
 
         self.authRepository = GithubAuthRepo(
-            clientId: "",
+            clientId: appConfig.githubClientID,
             networkManager: networkingManager,
             secureDataManger: secureDataManger
         )
         self.gitHubRepositoriesRepo = GitHubRepositoriesRepo(
             network: networkingManager,
             secureDataManger: secureDataManger)
-        
+
         // Use cases
         self.loginUseCase = LogInUseCase(authRepository: authRepository)
         self.logoutUseCase = LogoutUseCase(authRepository: authRepository)
         self.fetchReposUseCase = FetchReposUseCase(repository: gitHubRepositoriesRepo)
         self.fetchBranchesUseCase = FetchBranchesUseCase(repository: gitHubRepositoriesRepo)
+
+        
     }
 }
