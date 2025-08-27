@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SecureStorage
 
 @main
 struct GithubMiniApp: App {
+    let appContainer = AppContainer()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LogInView(viewModel: .init(
+                loginUseCase: appContainer.loginUseCase,
+                logoutUseCase: appContainer.logoutUseCase))
         }
     }
 }
