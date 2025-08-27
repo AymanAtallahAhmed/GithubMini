@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F418A5432E5F8C48002EB528 /* SecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5422E5F8C48002EB528 /* SecureStorage */; };
 		F418A5462E5F8D95002EB528 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5452E5F8D95002EB528 /* Networking */; };
-		F418A5572E5F9373002EB528 /* Constants in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5562E5F9373002EB528 /* Constants */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,7 @@
 		F418A5232E5F8938002EB528 /* Exceptions for "GithubMini" folder in "GithubMini" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Packages/Constants,
+				Info.plist,
 				Packages/Networking,
 				Packages/SecureStorage,
 			);
@@ -74,7 +73,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F418A5462E5F8D95002EB528 /* Networking in Frameworks */,
-				F418A5572E5F9373002EB528 /* Constants in Frameworks */,
 				F418A5432E5F8C48002EB528 /* SecureStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,7 +144,6 @@
 			packageProductDependencies = (
 				F418A5422E5F8C48002EB528 /* SecureStorage */,
 				F418A5452E5F8D95002EB528 /* Networking */,
-				F418A5562E5F9373002EB528 /* Constants */,
 			);
 			productName = GithubMini;
 			productReference = F418A4D02E5F78CE002EB528 /* GithubMini.app */;
@@ -436,11 +433,11 @@
 				DEVELOPMENT_TEAM = M8S37KFRLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubMini/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,9 +446,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayman.GithubMini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -466,11 +467,11 @@
 				DEVELOPMENT_TEAM = M8S37KFRLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubMini/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,9 +480,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayman.GithubMini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,10 +607,6 @@
 		F418A5452E5F8D95002EB528 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
-		};
-		F418A5562E5F9373002EB528 /* Constants */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Constants;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
