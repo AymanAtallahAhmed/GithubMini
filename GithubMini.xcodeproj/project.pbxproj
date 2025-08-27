@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F418A5432E5F8C48002EB528 /* SecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5422E5F8C48002EB528 /* SecureStorage */; };
+		F418A5462E5F8D95002EB528 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5452E5F8D95002EB528 /* Networking */; };
+		F418A5572E5F9373002EB528 /* Constants in Frameworks */ = {isa = PBXBuildFile; productRef = F418A5562E5F9373002EB528 /* Constants */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F418A4E12E5F78D0002EB528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +35,24 @@
 		F418A4EA2E5F78D0002EB528 /* GithubMiniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubMiniUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F418A5232E5F8938002EB528 /* Exceptions for "GithubMini" folder in "GithubMini" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Constants,
+				Packages/Networking,
+				Packages/SecureStorage,
+			);
+			target = F418A4CF2E5F78CE002EB528 /* GithubMini */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F418A4D22E5F78CE002EB528 /* GithubMini */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F418A5232E5F8938002EB528 /* Exceptions for "GithubMini" folder in "GithubMini" target */,
+			);
 			path = GithubMini;
 			sourceTree = "<group>";
 		};
@@ -52,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F418A5462E5F8D95002EB528 /* Networking in Frameworks */,
+				F418A5572E5F9373002EB528 /* Constants in Frameworks */,
+				F418A5432E5F8C48002EB528 /* SecureStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +102,7 @@
 				F418A4D22E5F78CE002EB528 /* GithubMini */,
 				F418A4E32E5F78D0002EB528 /* GithubMiniTests */,
 				F418A4ED2E5F78D0002EB528 /* GithubMiniUITests */,
+				F418A5412E5F8C48002EB528 /* Frameworks */,
 				F418A4D12E5F78CE002EB528 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +115,13 @@
 				F418A4EA2E5F78D0002EB528 /* GithubMiniUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F418A5412E5F8C48002EB528 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +144,9 @@
 			);
 			name = GithubMini;
 			packageProductDependencies = (
+				F418A5422E5F8C48002EB528 /* SecureStorage */,
+				F418A5452E5F8D95002EB528 /* Networking */,
+				F418A5562E5F9373002EB528 /* Constants */,
 			);
 			productName = GithubMini;
 			productReference = F418A4D02E5F78CE002EB528 /* GithubMini.app */;
@@ -195,6 +230,8 @@
 			);
 			mainGroup = F418A4C72E5F78CE002EB528;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F418A4D12E5F78CE002EB528 /* Products */;
 			projectDirPath = "";
@@ -396,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubMini/Preview Content\"";
+				DEVELOPMENT_TEAM = M8S37KFRLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -403,6 +441,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubMini/Preview Content\"";
+				DEVELOPMENT_TEAM = M8S37KFRLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -431,6 +471,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,6 +593,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F418A5422E5F8C48002EB528 /* SecureStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SecureStorage;
+		};
+		F418A5452E5F8D95002EB528 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		F418A5562E5F9373002EB528 /* Constants */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Constants;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F418A4C82E5F78CE002EB528 /* Project object */;
 }
