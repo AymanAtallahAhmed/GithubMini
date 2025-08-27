@@ -9,8 +9,8 @@ import Foundation
 
 protocol LogInUseCaseProtocol {
     func isLoggedIn() async -> Bool
-    func startDeviceLogin() async throws -> AuthDeviceFlow
-    func pollForDeviceToken(flow: AuthDeviceFlow) async throws
+    func startDeviceLogin() async throws -> AuthFlowEntity
+    func pollForDeviceToken(flow: AuthFlowEntity) async throws
 }
 
 struct LogInUseCase: LogInUseCaseProtocol {
@@ -20,11 +20,11 @@ struct LogInUseCase: LogInUseCaseProtocol {
         await authRepository.isLoggedIn()
     }
 
-    func startDeviceLogin() async throws -> AuthDeviceFlow {
+    func startDeviceLogin() async throws -> AuthFlowEntity {
         try await authRepository.startDeviceLogin()
     }
 
-    func pollForDeviceToken(flow: AuthDeviceFlow) async throws {
+    func pollForDeviceToken(flow: AuthFlowEntity) async throws {
         try await authRepository.pollForDeviceToken(flow: flow)
     }
 }
